@@ -4,13 +4,13 @@ spring:
       client:
         registration:
           google:
-            client-id: 1067955309426-uu0ieq0ue55bhldh6hismmtkv60lta31.apps.googleusercontent.com
-            client-secret: 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
+            client-id: ${OAUTH2_CLIENT_ID}
+            client-secret: ${OAUTH2_CLIENT_SECRET}
             scope: openid,profile,email
   datasource:
-    url: jdbc:postgresql://172.27.224.1:5432/banking
-    username: postgres
-    password: root
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
