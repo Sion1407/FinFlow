@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fin-flow2
+spec:
+  type: LoadBalancer  # Expose the service externally
+  ports:
+    - port: 80  # External port
+      targetPort: 8080  # Port your application listens on
+  selector:
+    app: fin-flow2  # Matches the label in the deployment

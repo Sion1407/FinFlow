@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fin-flow2
+spec:
+  replicas: 3  # Number of replicas (instances) of your application
+  selector:
+    matchLabels:
+      app: fin-flow2
+  template:
+    metadata:
+      labels:
+        app: fin-flow2
+    spec:
+      containers:
+        - name: fin-flow2
+          image: gcr.io/genaivetex/fin-flow2:latest2 #docker image
+          ports:
+            - containerPort: 8080 # port
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:postgresql://172.27.224.1:5432/banking"  # Database URL
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "postgres"  # Database username
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "root"  # Database password
