@@ -21,4 +21,4 @@ This is a reactive banking application built using **Spring WebFlux**, secured w
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/Sion1407/FinFlow.git
-cd your-repo-name
+cd FinFlow
